@@ -1,0 +1,39 @@
+class Waluty {
+    double eur;
+    double usd;
+    double pln;
+
+    void usd_to_eur() {
+        System.out.println(usd / 1.07);
+    }
+
+    void pln_to_usd() {
+        System.out.println(pln * 0.23);
+    }
+
+    void eur_to_pln() {
+        System.out.println(eur * 4.58);
+    }
+
+    Waluty(double newEUR, double newUSD) {
+        eur = newEUR;
+        usd = newUSD;
+    }
+
+    Waluty(double newPLN) {
+        pln = newPLN;
+    }
+}
+
+public class zad2 {
+    public static void main(String[] args) {
+
+        Waluty eur_usd = new Waluty(1,1);
+        Waluty pln_zl = new Waluty(1);
+
+        eur_usd.usd_to_eur();
+        pln_zl.pln_to_usd();
+        eur_usd.eur_to_pln();
+
+    }
+}
