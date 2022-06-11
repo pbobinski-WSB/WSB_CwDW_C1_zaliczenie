@@ -1,0 +1,55 @@
+class gazeta{
+    protected String nazwa;
+    protected double cena;
+gazeta(String nazwa, double cena){
+    this.nazwa=nazwa;
+    this.cena=cena;
+}
+public void info()
+{
+    System.out.println("Nazwa gazety "+nazwa);
+    System.out.println("Cena gazety "+cena+"pln");
+}
+public double getCena(){return cena;}
+    public String getNazwa(){return nazwa;}
+}
+
+class newspaper extends gazeta
+{
+    protected String wydawnictwo;
+    protected String gatunek;
+    protected boolean druk;
+    newspaper(String wydawnictwo, String gatunek, boolean druk, double cena, String nazwa)
+    {
+       super(nazwa, cena);
+       this.wydawnictwo=wydawnictwo;
+       this.gatunek=gatunek;
+       this.druk=druk;
+    }
+    public void newspaperInfo(){
+        System.out.println("Wydawnictwo: "+ wydawnictwo);
+        System.out.println("Gatunek: "+ gatunek);
+        System.out.println("Czy wydruk jest czarno-bialy? "+ druk);
+        if (druk)
+        {
+            System.out.println("Nie");
+        }else {
+            System.out.println("Tak");
+        }
+    }
+
+    public String getwydawnictwo(){return wydawnictwo ;}
+    public String getgatunek(){return gatunek;}
+    public boolean getdruk(){return druk;}
+    public double getrabat(){return cena*0.5;}
+}
+
+public class Kiosk {
+    public static void main(String[] args) {
+        gazeta itemek1 = new gazeta("Poligrafia", 4.20);
+        itemek1.info();
+        newspaper itemek2=new newspaper("Polska Gazeta","Poligrafia", false, 4.20, "test");
+        itemek2.newspaperInfo();
+        System.out.println("Gazeta po rabacie "+ itemek2.getrabat() + "pln");
+    }
+}
