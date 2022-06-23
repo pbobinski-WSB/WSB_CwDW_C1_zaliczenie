@@ -1,1 +1,0 @@
-Here is created file on the branch 'alpha', later added to the reposetory
